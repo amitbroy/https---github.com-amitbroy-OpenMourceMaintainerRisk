@@ -19,13 +19,13 @@ def create_schemas():
     conn = get_connection()
     cursor = conn.cursor()
     
-    schemas = ['RAW', 'STAGE', 'LINKMAP' ,'ENRICH', 'CURATE']
+    schemas = ['RAW', 'STAGE', 'LINKMAP' ,'ENRICH', 'CURATE', 'ORCHESTRATION']
     for schema in schemas:
         cursor.execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
     
     cursor.close()
     conn.close()
-    print("Schemas created: RAW, STAGE, LINKMAP, ENRICH, CURATE")
+    print("Schemas created: RAW, STAGE, LINKMAP, ENRICH, CURATE, ORCHESTRATION")
 
 def create_raw_tables():
     """Create all raw tables"""
