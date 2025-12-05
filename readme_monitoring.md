@@ -1,0 +1,23 @@
+-- Check the complete monitoring view
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS;
+
+-- Get table statistics only
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS 
+WHERE SECTION_NAME = 'Table Statistics'
+ORDER BY LAYER, TABLE_NAME;
+
+-- Get data pipeline flow
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS 
+WHERE SECTION_NAME = 'Data Pipeline Flow';
+
+-- Get data quality metrics
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS 
+WHERE SECTION_NAME = 'Data Quality';
+
+-- Get risk analysis summary
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS 
+WHERE SECTION_NAME = 'Risk Analysis';
+
+-- Get latest load timestamps
+SELECT * FROM CURATE.VW_RISK_ANALYSIS_PIPELINE_STATUS 
+WHERE SECTION_NAME = 'Last Load Timestamps';
